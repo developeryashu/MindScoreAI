@@ -1,5 +1,38 @@
 "use client";
 
+export default function CheckInPage() {
+  return (
+    <div>
+      <h1>Check In</h1>
+
+      {/* TEMP BACKEND TEST BUTTON */}
+      <button
+        onClick={async () => {
+          try {
+            const res = await fetch(
+              `${process.env.NEXT_PUBLIC_API_URL}/api/test`
+            );
+            const data = await res.json();
+            alert(data.message);
+          } catch (e) {
+            alert("FAILED to reach backend");
+            console.error(e);
+          }
+        }}
+        style={{
+          padding: "10px",
+          background: "black",
+          color: "white",
+          marginTop: "20px"
+        }}
+      >
+        TEST BACKEND
+      </button>
+
+    </div>
+  );
+}
+
 
 import { useState, useRef, useEffect, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
