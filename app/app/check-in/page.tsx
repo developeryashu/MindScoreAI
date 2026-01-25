@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, FormEvent } from 'react'
 import { Button } from '@/components/ui/button'
+import ConnectWalletButton from "@/components/ConnectWalletButton";
 import { Send, Sparkles } from 'lucide-react'
 
 interface Message {
