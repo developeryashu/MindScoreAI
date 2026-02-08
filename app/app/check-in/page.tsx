@@ -1,6 +1,5 @@
 'use client'
 
-import ConnectWalletButton from "@/components/ConnectWalletButton";
 import { useState, useRef, useEffect, FormEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import { Send, Sparkles } from 'lucide-react'
@@ -138,6 +137,7 @@ export default function CheckInPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="flex-1 p-3 rounded-lg"
+          placeholder="Share how you're feeling..."
           disabled={isTyping}
         />
         <Button type="submit" disabled={isTyping || !input.trim()}>
