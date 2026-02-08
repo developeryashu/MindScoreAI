@@ -1,3 +1,4 @@
+"use client";
 
 // Add this declaration to let TypeScript know about window.ethereum
 declare global {
@@ -5,7 +6,6 @@ declare global {
     ethereum?: any;
   }
 }
-"use client";
 
 import { Button } from "@/components/ui/button";
 
