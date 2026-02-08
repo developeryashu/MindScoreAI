@@ -6,12 +6,16 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'MindScoreAI - AI Mental Wellness Tracking',
   description: 'Track your mental wellness with AI-powered check-ins and personalized insights',
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#F6F4FF' },
     { media: '(prefers-color-scheme: dark)', color: '#000000' },
   ],
-}
+};
 
 export default function RootLayout({
   children,

@@ -1,3 +1,10 @@
+
+// Add this declaration to let TypeScript know about window.ethereum
+declare global {
+  interface Window {
+    ethereum?: any;
+  }
+}
 "use client";
 
 import { Button } from "@/components/ui/button";
