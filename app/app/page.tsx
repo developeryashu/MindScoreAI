@@ -13,7 +13,13 @@ export default function Home() {
 
   return (
     <div className="p-6">
-      <textarea value={text} onChange={e => setText(e.target.value)} className="border p-2"/>
+      <textarea
+  placeholder="Enter text to analyze emotion"
+  value={text}
+  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)}
+  className="border p-2"
+/>
+
       <button onClick={handleSubmit} className="bg-black text-white px-4 py-2 mt-2">Analyze</button>
       {result && <div className="mt-4">Emotion: {result.emotion} <br/> Score: {result.score}</div>}
     </div>

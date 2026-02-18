@@ -133,13 +133,21 @@ export default function CheckInPage() {
 
       <form onSubmit={handleSubmit} className="p-4 flex gap-2">
         <textarea
-          ref={inputRef}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="flex-1 p-3 rounded-lg"
-          placeholder="Share how you're feeling..."
-          disabled={isTyping}
-        />
+  ref={inputRef}
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      const form = e.currentTarget.form
+      if (form) form.requestSubmit()   // triggers your handleSubmit()
+    }
+  }}
+  className="flex-1 p-3 rounded-lg"
+  placeholder="Share how you're feeling..."
+  disabled={isTyping}
+/>
+
         <Button type="submit" disabled={isTyping || !input.trim()}>
           <Send />
         </Button>

@@ -208,6 +208,8 @@ export default function MarketsPage() {
             <h2 className="text-lg font-semibold">Open Predictions</h2>
             <div className="flex items-center gap-2">
               <button
+                type="button"
+                aria-label="Previous prediction"
                 onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
                 disabled={currentIndex === 0}
                 className="p-2 rounded-xl bg-muted disabled:opacity-50 touch-manipulation"
@@ -218,6 +220,8 @@ export default function MarketsPage() {
                 {currentIndex + 1} / {openMarkets.length}
               </span>
               <button
+                type="button"
+                aria-label="Next prediction"
                 onClick={() => setCurrentIndex(Math.min(openMarkets.length - 1, currentIndex + 1))}
                 disabled={currentIndex === openMarkets.length - 1}
                 className="p-2 rounded-xl bg-muted disabled:opacity-50 touch-manipulation"
