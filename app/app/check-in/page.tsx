@@ -45,15 +45,15 @@ export default function CheckInPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, isTyping])
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!input.trim() || isTyping) return
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  if (!input.trim() || isTyping) return
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      role: 'user',
-      content: input.trim()
-    }
+  const userMessage: Message = {
+    id: Date.now().toString(),
+    role: 'user',
+    content: input.trim()
+  }
 
     setMessages(prev => [...prev, userMessage])
     setInput('')
@@ -73,7 +73,7 @@ export default function CheckInPage() {
     }
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/test`, {
+      const response = await fetch(`${BACKEND_URL}/api/ai`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessage.content })
